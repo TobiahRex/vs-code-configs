@@ -1,0 +1,46 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "justMyCode": true,
+      "name": "Test Palladium",
+      "type": "python",
+      "request": "launch",
+      "program": "palladium/tests/start.py",
+      "console": "integratedTerminal",
+      "env": {
+        "PALLADIUM_ENV": "stage",
+        "ASYNC_TEST_TIMEOUT": "30",
+      }
+    },
+    {
+      "justMyCode": true,
+      "name": "Palladium",
+      "type": "python",
+      "request": "launch",
+      "program": "palladium.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--debug=True"
+      ],
+      "env": {
+        "PALLADIUM_ENV": "development",
+        "POSTGRES_URI": "postgresql://localhost:5434/palladium_dev",
+        "STRIPE_API_SECRET": "",
+        "STRIPE_API_KEY": "",
+        "LOCAL_FLUORINE": "http://localhost",
+      }
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+  {
+    "name": "Golang: Current File",
+    "type": "go",
+    "request": "launch",
+    "mode": "debug",
+    "program": "${file}"
+  },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Test Finance Pub Sub",
+      "type": "python",
+      "request": "launch",
+      "env": {
+        "PYTHONPATH": "/Users/trex/code/yewno/iridium/lambdas/finance_pub_sub"
+      },
+      "program": "${workspaceFolder}/tests/start_lambda_tests.py",
+      "console": "integratedTerminal",
+      "args": ["finance_pub_sub"]
+    },
+    {
+      "name": "Test Email Ftp Diff",
+      "type": "python",
+      "request": "launch",
+      "env": {
+        "PYTHONPATH": "/Users/trex/code/yewno/iridium/lambdas/jobs_from_concept_exposures"
+      },
+      "program": "${workspaceFolder}/tests/start_relative_import_tests.py",
+      "console": "integratedTerminal",
+      "args": ["email_ftp_diff"]
+    },
+    {
+      "name": "Gen. Sv3 Inferences",
+      "type": "python",
+      "request": "launch",
+      "env": {
+        "PYTHONPATH": "/Users/trex/code/yewno/iridum_sentiment-v3"
+      },
+      "program": "${workspaceFolder}/jobs/redo_sentiment/generate_sv3_inferences.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--target-date",
+        "2021-12-01",
+        "--output-path",
+        ".\/sentiments"
+      ]
+    },
+    {
+      "name": "Old. Sv3 Extraction",
+      "type": "python",
+      "request": "launch",
+      "env": {
+        "PYTHONPATH": "/Users/trex/code/yewno/iridum_sentiment-v3"
+      },
+      "program": "${workspaceFolder}/jobs/sentiment_v3/extract_sentiment_v3.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--start-date",
+        "2021-12-01",
+        "--end-date",
+        "2021-12-07",
+        "--output-path",
+        ".\/sentiments"
+      ]
+    },
+    {
+      "name": "Gen. SV3",
+      "type": "python",
+      "request": "launch",
+      "env": {
+        "PYTHONPATH": "/Users/trex/code/yewno/iridum_sentiment-v3"
+      },
+      "program": "${workspaceFolder}/jobs/redo_sentiment/generate_sv3.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--start-date",
+        "2021-07-01",
+        "--end-date",
+        "2021-09-25",
+      ]
+    },
+  ]
+}
